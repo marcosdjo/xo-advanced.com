@@ -137,7 +137,7 @@
 
   /* small screens: reduce gaps */
   @media (max-width:460px){
-    :root{ --gap:6px; --cell-size: min(50px, 14vw); }
+    :root{ --gap:6px; --cell-size: min(30px, 11vw); }
     .status{
       font-size:13px; min-width:140px;
     }
@@ -146,7 +146,7 @@
     h1{ font-size:16px; }
   }
   @media (max-width:350px){
-    :root{ --gap:4px; --cell-size: min(40px, 16vw); }
+    :root{ --gap:4px; --cell-size: min(20px, 8vw); }
     .status{
       font-size:12px; min-width:120px;
     }
@@ -251,7 +251,7 @@ function onCellClick(e){
 
   // check global victory
   if(checkWinner(boardWinners)){
-    winnerDisplay.textContent = `🎉 اللاعب ${currentPlayer} ربح اللعبة الكبيرة!`;
+    winnerDisplay.textContent = `the winner player ${currentPlayer} `;
     statusEl.textContent = `انتهت اللعبة`;
     disableAll();
     return;
@@ -266,7 +266,7 @@ function onCellClick(e){
 
   // switch player
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-  statusEl.textContent = `الدور الآن: ${currentPlayer}`;
+  statusEl.textContent = `role: ${currentPlayer}`;
   updateActiveBoards();
 }
 
