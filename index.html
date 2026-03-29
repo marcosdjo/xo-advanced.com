@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ultimate XO - Mobile + Restart</title>
+<title>Ultimate XO </title>
 <style>
   :root{
     --gap: 8px;
@@ -73,9 +73,9 @@
     display:grid;
     grid-template-columns: repeat(3, var(--cell-size));
     grid-template-rows: repeat(3, var(--cell-size));
-    gap: 6px;
+    gap: 2px;
     background: var(--mini-bg);
-    padding:8px;
+    padding:5px;
     border-radius:10px;
     transition: transform .15s ease, box-shadow .15s ease, opacity .15s;
     touch-action: manipulation;
@@ -138,7 +138,10 @@
   /* small screens: reduce gaps */
   @media (max-width:420px){
     :root{ --gap:6px; --cell-size: min(64px, 14vw); }
-    .status{ font-size:13px; min-width:140px; }
+    .status{
+      font-size:13px; min-width:140px;
+    }
+    
     h1{ font-size:16px; }
   }
 
@@ -152,9 +155,9 @@
 <body>
 
 <header>
-  <h1>Ultimate XO - Mobile</h1>
+  <h1>Ultimate XO</h1>
   <div class="controls">
-    <div class="status" id="status">الدور الآن: X</div>
+    <div class="status" id="status">role : X</div>
     <button id="restartBtn" aria-label="Restart game">Restart</button>
   </div>
 </header>
@@ -182,7 +185,7 @@ function createGame(){
   nextBoard = null;
   currentPlayer = 'X';
   winnerDisplay.textContent = '';
-  statusEl.textContent = `الدور الآن: ${currentPlayer}`;
+  statusEl.textContent = `role: ${currentPlayer}`;
 
   for(let b=0;b<9;b++){
     const board = document.createElement('div');
