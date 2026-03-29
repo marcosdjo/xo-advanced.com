@@ -14,7 +14,7 @@
     --win-color: #27ae60;
     --active-glow: rgba(0, 195, 255, 0.575);
     /* cell size responsive: choose smaller of 70px and 12.5vw (so it fits on mobile) */
-    --cell-size: min(70px, 12.5vw);
+    --cell-size: min(60px, 12.5vw);
   }
 
   *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
@@ -136,14 +136,23 @@
   }
 
   /* small screens: reduce gaps */
-  @media (max-width:420px){
-    :root{ --gap:6px; --cell-size: min(64px, 14vw); }
+  @media (max-width:460px){
+    :root{ --gap:6px; --cell-size: min(50px, 14vw); }
     .status{
       font-size:13px; min-width:140px;
     }
-    
+    main{gap:8px;
+    }
     h1{ font-size:16px; }
   }
+  @media (max-width:350px){
+    :root{ --gap:4px; --cell-size: min(40px, 16vw); }
+    .status{
+      font-size:12px; min-width:120px;
+    }
+    h1{ font-size:14px; }
+  }
+ 
 
   /* landscape phones: allow wider layout shrink */
   @media (orientation:landscape) and (max-width:800px){
